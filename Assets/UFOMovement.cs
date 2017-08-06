@@ -16,10 +16,10 @@ public class UFOMovement : MonoBehaviour,UfoTransponder {
 	void Start() {
 		
 		isRising = false;
-		com = FindObjectOfType<TheCreator> ();
+		//com = FindObjectOfType<TheCreator> ();
 	}
 	public UFOMovement(GameObject ufo){
-		this.gameObject = ufo;
+		
 	}
 	void Update() {
 		pos = transform.localPosition;

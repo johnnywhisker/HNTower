@@ -8,7 +8,7 @@ static class DefaultValue {
 	public const float stackC =  2.05f;
 	public const float endPoint = -1.83f;
 }
-
+#region TRASH
 public interface Communicator {	
 	void PickItUp (Vector3 pos,string from);
 	void DropItDown (Vector3 pos, string to);
@@ -50,134 +50,73 @@ public class Planet {
 		}
 	}
 }
+#endregion
 
+public class TheCreator : MonoBehaviour {
+	private PlanetController selectedPlanet;
+	public StackController[] stacks;
+	public PlanetController[] planets;
 
-
-
-
-
-
-
-
-public class TheCreator : MonoBehaviour,Communicator {
-	public GameObject venus,earth,neptune,uranus,saturn,jupiter,ufo;
-	private Planet payload;
-	private Planet _venus,_earth,_neptune,_uranus,_saturn,_jupiter;
-	public UfoTransponder toUFO;
-	public Planet[] planetsA, planetsB, planetsC;
-	public int leftA,leftB,leftC;
-	void Start(){
-		Debug.Log ("Creator is here");
-		_venus = new Planet (venus);
-		_earth = new Planet (earth);
-		_neptune = new Planet (neptune);
-		_uranus = new Planet (uranus);
-		_saturn = new Planet (saturn);
-		_jupiter = new Planet (jupiter);
-		toUFO = FindObjectOfType<UFOMovement> ();
-		planetsA = new Planet[] { _jupiter,_saturn,_uranus,_neptune,_earth,_venus};
-		planetsB = new Planet[6];
-		planetsC = new Planet[6];
-		leftA = 6;
-		leftB = 0;
-		leftC = 0;
-	}
-	private bool isClear(Vector3 pos,string to){
-		switch (to) {
-		case "stackA":
-			float result = DefaultValue.stackA - pos.x;
-			if (Mathf.Abs (DefaultValue.stackA - pos.x) < 0.5)
-				return true;
-			break;
-		case "stackB":
-			if (Mathf.Abs (pos.x - DefaultValue.stackB) < 0.5)
-				return true;
-			break;
-		case "stackC":
-			if (Mathf.Abs (pos.x - DefaultValue.stackC) < 0.5)
-				return true;
-			break;
+	void Start() {
+		foreach( var planet in planets) {
+			stacks [0].AddPlanet (planet);
 		}
-		return false;
 	}
-	public void PickItUp(Vector3 pos,string from){
-		if (payload != null) {
-			
-			toUFO.respond (false);
+
+	void Update(){
+		if (selectedPlanet == null)
+			return;
+		if (Input.GetKeyUp (KeyCode.W))
+			PickUp ();
+		if (Input.GetKeyUp (KeyCode.S))
+			Drop ();
+		if (Input.GetKeyUp (KeyCode.D))
+			Right ();
+		if (Input.GetKeyUp (KeyCode.A))
+			Left ();		
+	}
+
+	#region MoveControler
+	private void PickUp(){
+		if (selectedPlanet.IsPicked)
+			return;
+		if (stacks [selectedPlanet.CurrentStack].RemoveTop ())
+			selectedPlanet.PickUp ();
+	}
+
+	private void Drop() {
+		if (!selectedPlanet.IsPicked)
+			return;
+		if (!stacks [selectedPlanet.CurrentStack].isEmpty()) {
+			if (selectedPlanet.Size > stacks [selectedPlanet.CurrentStack].GetTopSize ())
+				return;
+		}
+		if (stacks [selectedPlanet.CurrentStack].AddPlanet (selectedPlanet)) {
+			selectedPlanet.Drop (stacks [selectedPlanet.CurrentStack].GetTopPos ());
+		}
+	}
+
+	private void Right() {
+		selectedPlanet.MoveRight ();
+	}
+
+	private void Left() {
+		selectedPlanet.MoveLeft ();
+	}
+	#endregion
+
+	public void SelectedPlanet(PlanetController planet) {
+		if (selectedPlanet == null) {
+			selectedPlanet = planet;
 			return;
 		}
-		if (isClear (pos, from)) {
-			switch (from) {
-			case "stackA":
-  				if (leftA > 0) {
-					payload = planetsA [leftA - 1];
-					leftA--;
-
-					toUFO.respond (false);
-				} else {
-					toUFO.respond (false);
-					payload = null;
-				}
-				break;
-			case "stackB":
-				if (leftB > 0) {
-					payload = planetsB [leftB - 1];
-					leftB--;
-					toUFO.respond (true);
-				} else {
-					toUFO.respond (false);
-					payload = null;
-				}
-				break;
-			case "stackC":
-				if (leftC > 0) {
-					payload = planetsC [leftC - 1];
-					leftC--;
-					toUFO.respond (true);
-				} else {
-					toUFO.respond (false);
-					payload = null;
-				}
-				break;
-			}
-		}
-	}
-	public void DropItDown(Vector3 pos, string to){
-		if (payload != null) {
-			if (isClear (pos, to)) {
-				switch (to) {
-				case "stackA":
-					planetsA [leftA] = payload;
-					payload.core.active = true;
-					Vector3 newPos = new Vector3 (DefaultValue.stackB, DefaultValue.endPoint + (1 * (6 - leftA)), payload.core.transform.localPosition.z);
-					payload.core.transform.localPosition = newPos;
-					payload = null;
-					break;
-				}
-			}
+		if (!selectedPlanet.IsPicked) {
+			selectedPlanet = planet;
 		}
 	}
 
-
-	void Update() {
-		if (Input.GetKey (KeyCode.Space)) {
-			
-				PickItUp (ufo.transform.localPosition, "stackA");
-
-		}
-		if (Input.GetKey (KeyCode.D)) {
-			DropItDown (ufo.transform.localPosition, "stackA");
-		}
-		if (payload != null) {
-			payload.core.active = false;
-		}
-
-
-
-	}
-
-	void FixUpdate() {
-		
+	public float GetStackPosX(int stack){
+		return stacks [stack].GetXPos ();
 	}
 
 }

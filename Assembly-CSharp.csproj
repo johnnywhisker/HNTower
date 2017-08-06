@@ -52,12 +52,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DistanceTool\DistanceTool.cs" />
+     <Compile Include="Assets\PlanetController.cs" />
      <Compile Include="Assets\Scripts\effect\fading.cs" />
      <Compile Include="Assets\Scripts\effect\fbLink.cs" />
      <Compile Include="Assets\Scripts\sceneTransition\gameEnter.cs" />
      <Compile Include="Assets\Scripts\sceneTransition\gamePlayEnter.cs" />
+     <Compile Include="Assets\StackController.cs" />
      <Compile Include="Assets\TheCreator.cs" />
-     <Compile Include="Assets\UFOController.cs" />
      <Compile Include="Assets\UFOMovement.cs" />
      <None Include="Assets\DistanceTool\READ ME.txt" />
  <Reference Include="UnityEngine.Analytics">

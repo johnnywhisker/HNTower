@@ -2,21 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TheCreator.cs">
     <Files>
-      <File FileName="Assets/TheCreator.cs" Line="148" Column="15" />
-      <File FileName="Assets/UFOMovement.cs" Line="22" Column="3" />
-      <File FileName="Assets/UFOController.cs" Line="5" Column="43" />
-      <File FileName="Assets/Scripts/sceneTransition/gameEnter.cs" Line="1" Column="1" />
+      <File FileName="Assets/TheCreator.cs" Line="66" Column="16" />
+      <File FileName="Assets/StackController.cs" Line="48" Column="22" />
+      <File FileName="Assets/PlanetController.cs" Line="25" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/johnwhisker/Downloads/This Is The Serious Project Bout HNTower/Assets/TheCreator.cs" line="215" column="1" />
-      <Breakpoint file="/Users/johnwhisker/Downloads/This Is The Serious Project Bout HNTower/Assets/TheCreator.cs" line="219" column="1" />
-      <Breakpoint file="/Users/johnwhisker/Downloads/This Is The Serious Project Bout HNTower/Assets/TheCreator.cs" line="220" column="1" />
-      <Breakpoint file="/Users/johnwhisker/Downloads/This Is The Serious Project Bout HNTower/Assets/TheCreator.cs" line="237" column="1" />
-      <Breakpoint file="/Users/johnwhisker/Downloads/This Is The Serious Project Bout HNTower/Assets/TheCreator.cs" line="234" column="1" />
-      <Breakpoint file="/Users/johnwhisker/Downloads/This Is The Serious Project Bout HNTower/Assets/TheCreator.cs" line="233" column="1" />
-      <Breakpoint file="/Users/johnwhisker/Downloads/This Is The Serious Project Bout HNTower/Assets/TheCreator.cs" line="109" column="1" />
+      <Breakpoint file="/Users/johnwhisker/Downloads/This Is The Serious Project Bout HNTower/Assets/TheCreator.cs" line="80" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
