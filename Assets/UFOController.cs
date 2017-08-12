@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlanetController : MonoBehaviour {
+public class UFOController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
