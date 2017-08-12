@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EverythingController : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public interface IUFOTransponder {
 	
-	// Update is called once per frame
-	void Update () {
-		
+}
+
+public interface IPlanetCom {
+	
+}
+
+public interface IToAll {
+	
+}
+
+public class EverythingController : MonoBehaviour,IToAll {
+	public PlanetController[] planets;
+	public StackController[] stacks;
+	public UFOController ufo;
+
+	void Start() {
+		foreach (PlanetController planet in planets) {
+			stacks [0].planets.Add (planet);
+		}
 	}
 }
