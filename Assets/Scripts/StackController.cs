@@ -5,8 +5,8 @@ using UnityEngine;
 public class StackController : MonoBehaviour {
 	public List<PlanetController> planets;
     private static bool isChosen = false;
-
-   
+	public int stackNumber;
+	public float nextDropLongtitude = Default.stackBottom;
     // Select the stack by clicking on it
     public void OnMouseOver()
     {
@@ -15,6 +15,8 @@ public class StackController : MonoBehaviour {
             if (isChosen)
             {
                 isChosen = false;
+				EverythingController gameController = FindObjectOfType<EverythingController> ();
+				gameController.CurrentStack = stackNumber;
                 Debug.Log("Choosing: " + gameObject.name);
             }
             else
