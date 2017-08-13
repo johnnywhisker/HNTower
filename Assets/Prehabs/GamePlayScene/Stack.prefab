@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4065096490066086}
   - component: {fileID: 212640798616339802}
   - component: {fileID: 114418067729493776}
+  - component: {fileID: 136724027226866464}
   m_Layer: 0
   m_Name: laserLightA
   m_TagString: Untagged
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4841576211030236}
   - component: {fileID: 212133297342195412}
   - component: {fileID: 114090068191184930}
+  - component: {fileID: 136625466334743462}
   m_Layer: 0
   m_Name: laserLightB
   m_TagString: Untagged
@@ -55,6 +57,7 @@ GameObject:
   - component: {fileID: 4190319522911916}
   - component: {fileID: 212235427854636134}
   - component: {fileID: 114546364192566924}
+  - component: {fileID: 136926096212922690}
   m_Layer: 0
   m_Name: laserLightC
   m_TagString: Untagged
@@ -168,6 +171,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planets: []
+--- !u!136 &136625466334743462
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384765447996542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 5.6949997
+  m_Height: 39.299995
+  m_Direction: 1
+  m_Center: {x: -0.00000021606684, y: 0, z: 0}
+--- !u!136 &136724027226866464
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1269341300818948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 5.6949997
+  m_Height: 39.299995
+  m_Direction: 1
+  m_Center: {x: 0.0000019073486, y: 0, z: 0.00000011920929}
+--- !u!136 &136926096212922690
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1445145268391652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 5.6949997
+  m_Height: 39.299995
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.00000011920929}
 --- !u!212 &212133297342195412
 SpriteRenderer:
   m_ObjectHideFlags: 1
