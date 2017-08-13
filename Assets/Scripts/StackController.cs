@@ -4,13 +4,39 @@ using UnityEngine;
 
 public class StackController : MonoBehaviour {
 	public List<PlanetController> planets;
-
+    private static bool isChosen = false;
 
    
     // Select the stack by clicking on it
-    void OnMouseOver()
+    public void OnMouseOver()
     {
-        print("Name: " + gameObject.name);
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            if (isChosen)
+            {
+                isChosen = false;
+                Debug.Log("Choosing: " + gameObject.name);
+            }
+            else
+            {
+                ChoosingStack();
+            }
+        }   
     }
 
+    public void ChoosingStack()
+    {
+        isChosen = true;
+    }
+
+    public PlanetController GetTopPlanet()
+    {
+        return planets.FindLast(p => p);
+    }
+
+    public bool IsEmpty()
+    {
+        if (planets.Count > 0) return false;
+        return true;
+    }
 }

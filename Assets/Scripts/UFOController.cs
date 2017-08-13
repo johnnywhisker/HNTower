@@ -15,8 +15,8 @@ public class UFOController : MonoBehaviour {
     public float speed;
 
     // UFO Position
-    private float pos1, pos2, pos3;
-    private float desY; // Destination UFO desires to go
+    //private Vector3 pos1, pos2, pos3;
+    //private Vector3 dest; // Destination UFO desires to go
 
     // Use this for initialization
     void Start()
@@ -25,19 +25,19 @@ public class UFOController : MonoBehaviour {
         bottom = transform.position.y - 0.35f;
 
         // Postions of UFO correspond with stacks 
-        pos1 = -6.6f;
-        pos2 = -2.21f;
-        pos3 = 2.08f;
-        desY = pos1; // UFO sets stack 1 as first play to come when the game starts
+        //pos1 = new Vector3(-6.61f, 3.439999f, -2.46f);
+        //pos2 = new Vector3(-2.27f, 3.63f, -2.46f);
+        //pos3 = new Vector3(2.07f, 3.7f, -2.46f);
+        //dest = pos1; // UFO sets stack 1 as first play to come when the game starts
     }
 	
 	// Update is called once per frame
 	void Update () {
-        ufoMovState();
+        ufoMovVer();
 	}
 
     // UFO movement
-    public void ufoMovState()
+    public void ufoMovVer()
     {
         ufoPos = transform.position;
         if (isUp)
@@ -57,11 +57,5 @@ public class UFOController : MonoBehaviour {
         transform.position = ufoPos;
     }
 
-    public void OnMouseOver()
-    {
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            
-        }
-    }
+
 }
