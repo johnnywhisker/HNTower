@@ -30,6 +30,7 @@ public class EverythingController : MonoBehaviour,IToAll {
 			this.currentStack = value;
 			if (currentPlanet != null) {
 				currentPlanet.MoveTo (value);
+				willBeDroped = true;
 			}
 		} get {
 			return currentStack;
@@ -37,6 +38,7 @@ public class EverythingController : MonoBehaviour,IToAll {
 	}
 
 	private int currentStack;
+	private bool willBeDroped = false;
 	private PlanetController currentPlanet;
 	private int currentA, currentB;
 
@@ -71,6 +73,15 @@ public class EverythingController : MonoBehaviour,IToAll {
 		}
 		if (Input.GetKeyUp (KeyCode.D)) {
 			DropDownPlanet ();
+		}
+		if (willBeDroped) {
+			if (currentPlanet != null) {
+				if (!currentPlanet.isMoving) {
+					if (currentPlanet.CurrentStack != currentStack) {
+						DropDownPlanet ();
+					}
+				}
+			}
 		}
 	}
 
