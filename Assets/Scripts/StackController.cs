@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class StackController : MonoBehaviour {
 	public List<PlanetController> planets;
@@ -31,9 +32,9 @@ public class StackController : MonoBehaviour {
         isChosen = true;
     }
 
-    public PlanetController GetTopPlanet()
+	public PlanetController GetTopPlanet()
     {
-        return planets.FindLast(p => p);
+		return planets.LastOrDefault();
     }
 
     public bool IsEmpty()

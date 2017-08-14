@@ -72,6 +72,7 @@ public class EverythingController : MonoBehaviour,IToAll {
 			PickUpPlanet ();
 		}
 		if (Input.GetKeyUp (KeyCode.D)) {
+			Debug.Log ("KEY ACTIVATED");
 			DropDownPlanet ();
 		}
 		if (willBeDroped) {
@@ -102,18 +103,11 @@ public class EverythingController : MonoBehaviour,IToAll {
 	}
 	public bool DropDownPlanet() {
 		if (currentPlanet != null) {
-			if (stacks [currentStack].planets.Count == 0) {
-				currentPlanet.DropDown ();
-				stacks [currentStack].planets.Add (currentPlanet);
-				stacks [currentStack].nextDropLongtitude += currentPlanet.diameter;
-				currentPlanet.CurrentStack = currentStack;
-				currentPlanet = null;
-				return true;
-			}
 			if (currentPlanet.weight < stacks [currentStack].GetTopPlanet ().weight) {
 				currentPlanet.DropDown ();
 				stacks [currentStack].planets.Add (currentPlanet);
-				stacks [currentStack].nextDropLongtitude += currentPlanet.diameter;
+				Debug.Log ("CHESES" + stacks[currentStack].nextDropLongtitude);
+				stacks [currentStack].nextDropLongtitude -= 124f;
 				currentPlanet.CurrentStack = currentStack;
 				currentPlanet = null;
 				return true;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class PlanetController : MonoBehaviour {
 
 	public int weight;
@@ -24,6 +24,7 @@ public class PlanetController : MonoBehaviour {
 	}
 	private int currentStack;
 	private int desireStack;
+	private float lastStackPlanetCoordinate;
 	private bool isClimbing = false;
 	private bool isFalling = false;
 	private bool isMovingHorizontal = false;
@@ -51,9 +52,23 @@ public class PlanetController : MonoBehaviour {
 
 		if (isFalling && Mathf.Abs (transform.localPosition.y - gameController.stacks[gameController.CurrentStack].nextDropLongtitude + diameter) > 0.5) {
 			if (Mathf.Abs(transform.localPosition.y - gameController.stacks[gameController.CurrentStack].nextDropLongtitude + diameter) > 0.5) {
-				Vector3 pos = new Vector3 (transform.localPosition.x, gameController.stacks [gameController.CurrentStack].nextDropLongtitude + diameter, transform.localPosition.z);
-				transform.localPosition = pos;
-				isFalling = false;
+				float xCoordinate = gameController.stacks [desireStack].transform.localPosition.x ;
+				Debug.Log ("The sire" + desireStack);
+				Debug.Log (gameController.stacks [desireStack].planets.Count);
+
+				if (gameController.stacks [desireStack].planets.Count == 1) {
+					Vector3 pos = new Vector3 (xCoordinate, gameController.stacks [gameController.CurrentStack].nextDropLongtitude + diameter, transform.localPosition.z);
+					transform.localPosition = pos;
+					isFalling = false;				
+				}
+				else {
+					Debug.Log ("MHAHA" + lastStackPlanetCoordinate);
+					Vector3 pos = new Vector3 (xCoordinate, lastStackPlanetCoordinate + 1 + diameter, transform.localPosition.z);
+					transform.localPosition = pos;
+					isFalling = false;		
+				}
+
+
 			}
 			transform.position += Vector3.down;
 		} else {
@@ -62,6 +77,10 @@ public class PlanetController : MonoBehaviour {
 
 		if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.5) {
 			if (transform.localPosition.x < gameController.stacks [desireStack].transform.localPosition.x) {
+				float xCoordinate = gameController.stacks [desireStack].transform.localPosition.x;
+				Debug.Log (transform.localPosition.y);
+				Vector3 pos = new Vector3 (xCoordinate, transform.localPosition.y, transform.localPosition.z);
+				transform.localPosition = pos;
 				transform.localPosition += Vector3.right;
 			} else {
 				transform.localPosition += Vector3.left;
@@ -79,6 +98,14 @@ public class PlanetController : MonoBehaviour {
 	public void MoveTo(int stack){
 		isMovingHorizontal = true;
 		desireStack = stack;
+		if (desireStack == 1 && gameController.stacks [desireStack].planets.Count == 0) {
+			lastStackPlanetCoordinate = gameController.stacks [desireStack - 1].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack - 1].GetTopPlanet ().diameter;
+		} else if (desireStack == 2 && gameController.stacks [desireStack].planets.Count == 0) {
+			lastStackPlanetCoordinate = gameController.stacks [0].GetTopPlanet ().transform.localPosition.y + gameController.stacks [0].GetTopPlanet ().diameter;
+		}
+		else {
+			lastStackPlanetCoordinate = gameController.stacks [desireStack].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack].GetTopPlanet ().diameter;
+		} 
 	}
 	public void DropDown() {
 		isFalling = true;
