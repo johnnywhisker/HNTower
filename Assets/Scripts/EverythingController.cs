@@ -16,8 +16,9 @@ public interface IToAll {
 
 public static class Default{
 	public const float speed = 0.5f;
-	public const float planetRoof = 4.04f;
-	public const float stackBottom = -1.83f + 1.6f;
+	public const float planetRoof = 3.3f;
+	public const float stackBottom = -3.65f;
+	public const float averageRatio = 4.5333952f;
 
 }
 
@@ -51,6 +52,8 @@ public class EverythingController : MonoBehaviour,IToAll {
 				previousDiameter = planet.diameter;
 			}
 		}
+
+		Debug.Log ("Stack 1 cordinate: " + stacks [0].transform.localPosition);
 		Debug.Log ("LZ coordinate: " + stacks [0].nextDropLongtitude);
 		currentA = stacks [0].planets.Count;
 		currentB = stacks [1].planets.Count;
