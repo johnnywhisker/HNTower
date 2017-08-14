@@ -147,34 +147,100 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114090068191184930, guid: a59070c5ec0597547b6c59a09fe65312,
-        type: 2}
-      propertyPath: stackNumber
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114546364192566924, guid: a59070c5ec0597547b6c59a09fe65312,
-        type: 2}
-      propertyPath: stackNumber
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4065096490066086, guid: a59070c5ec0597547b6c59a09fe65312, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 4841576211030236, guid: a59070c5ec0597547b6c59a09fe65312, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4190319522911916, guid: a59070c5ec0597547b6c59a09fe65312, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4065096490066086, guid: a59070c5ec0597547b6c59a09fe65312, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a59070c5ec0597547b6c59a09fe65312, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &208488242
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4138644495226458, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138644495226458, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138644495226458, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138644495226458, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138644495226458, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138644495226458, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138644495226458, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138644495226458, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: planets.Array.data[0]
+      value: 
+      objectReference: {fileID: 1479552569}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: planets.Array.data[1]
+      value: 
+      objectReference: {fileID: 2089933791}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: planets.Array.data[2]
+      value: 
+      objectReference: {fileID: 1790959137}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: planets.Array.data[3]
+      value: 
+      objectReference: {fileID: 1410693235}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: planets.Array.data[4]
+      value: 
+      objectReference: {fileID: 1765386124}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: planets.Array.data[5]
+      value: 
+      objectReference: {fileID: 1912404122}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: stacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 596562909}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: stacks.Array.data[1]
+      value: 
+      objectReference: {fileID: 1149678951}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: stacks.Array.data[2]
+      value: 
+      objectReference: {fileID: 1997877731}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: ufo
+      value: 
+      objectReference: {fileID: 1956800961}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &362995613
 GameObject:
@@ -265,32 +331,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &508902899 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1445145268391652, guid: a59070c5ec0597547b6c59a09fe65312,
-    type: 2}
-  m_PrefabInternal: {fileID: 76970892}
---- !u!114 &508902903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 508902899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToolName: Distance Tool 2
-  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  initialized: 1
-  initialName: Distance Tool 2
-  startPoint: {x: -4.3386736, y: 2.0789123, z: 0}
-  endPoint: {x: -4.3378673, y: 1.730199, z: 0}
-  distance: 0
-  gizmoRadius: 0.1
-  scaleToPixels: 0
-  pixelPerUnit: 128
 --- !u!1001 &565876910
 Prefab:
   m_ObjectHideFlags: 0
@@ -330,102 +370,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4507936027598544, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 1101065618917048, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_TagString
-      value: Venus
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175050553992360, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_TagString
-      value: Earth
-      objectReference: {fileID: 0}
-    - target: {fileID: 1984858018219146, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_TagString
-      value: Neptune
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467788653828512, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_TagString
-      value: Uranus
-      objectReference: {fileID: 0}
-    - target: {fileID: 1042388064882004, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_TagString
-      value: Saturn
-      objectReference: {fileID: 0}
-    - target: {fileID: 1024693467833836, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_TagString
-      value: Jupiter
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507936027598544, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4552014546783792, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117281157340926, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4011403536700106, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749501017752184, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4983312109335914, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507936027598544, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 4552014546783792, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 4552014546783792, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117281157340926, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117281157340926, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 4011403536700106, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 4011403536700106, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749501017752184, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4749501017752184, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4983312109335914, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4983312109335914, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.57
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 432adcb7b4366eb44a0de6135d9ed1f6, type: 2}
   m_IsPrefabParent: 0
@@ -450,7 +394,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4725140904686362, guid: dbbd88b6355b2f84bab327bbb8f718c1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.2320418
+      value: 12.08
       objectReference: {fileID: 0}
     - target: {fileID: 4725140904686362, guid: dbbd88b6355b2f84bab327bbb8f718c1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -480,173 +424,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114485378548626348, guid: dbbd88b6355b2f84bab327bbb8f718c1,
+        type: 2}
+      propertyPath: loopTimes
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbbd88b6355b2f84bab327bbb8f718c1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1410693234 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1984858018219146, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
+--- !u!114 &1410693235 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114246298587919092, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
     type: 2}
   m_PrefabInternal: {fileID: 565876910}
---- !u!114 &1410693235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1410693234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e542aa3a82e94bdd83e421f153e1c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 2
-  diameter: 0.3705908
---- !u!114 &1410693239
+--- !u!114 &1479552569 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1410693234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToolName: Distance Tool 4
-  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  initialized: 1
-  initialName: Distance Tool 4
-  startPoint: {x: -3.5796466, y: 0.3700742, z: 0}
-  endPoint: {x: -3.5796466, y: 1.2833171, z: 0}
-  distance: 0
-  gizmoRadius: 0.1
-  scaleToPixels: 0
-  pixelPerUnit: 128
---- !u!1 &1479552568 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1024693467833836, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
+  m_PrefabParentObject: {fileID: 114439641699632708, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
     type: 2}
   m_PrefabInternal: {fileID: 565876910}
---- !u!114 &1479552569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1479552568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e542aa3a82e94bdd83e421f153e1c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 5
-  diameter: 0.9895232
---- !u!114 &1479552573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1479552568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToolName: Distance Tool 1
-  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  initialized: 1
-  initialName: Distance Tool 1
-  startPoint: {x: -3.1694598, y: -4.714486, z: 0}
-  endPoint: {x: -3.1726995, y: -2.5110874, z: 0}
-  distance: 0
-  gizmoRadius: 0.1
-  scaleToPixels: 0
-  pixelPerUnit: 128
---- !u!1 &1558315381
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1558315384}
-  - component: {fileID: 1558315383}
-  - component: {fileID: 1558315382}
-  - component: {fileID: 1558315385}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1558315382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1558315381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1558315383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1558315381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
---- !u!4 &1558315384
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1558315381}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1558315385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1558315381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5049af990324e3c85f1449cb19061c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planets:
-  - {fileID: 1479552569}
-  - {fileID: 2089933791}
-  - {fileID: 1790959137}
-  - {fileID: 1410693235}
-  - {fileID: 1765386124}
-  - {fileID: 1912404122}
-  stacks:
-  - {fileID: 596562909}
-  - {fileID: 1149678951}
-  - {fileID: 1997877731}
-  ufo: {fileID: 1956800961}
 --- !u!1001 &1660441200
 Prefab:
   m_ObjectHideFlags: 0
@@ -752,123 +549,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b828f22aac499a448d06183ac50b5de, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1765386123 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1175050553992360, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
+--- !u!114 &1765386124 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114148563861129928, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
     type: 2}
   m_PrefabInternal: {fileID: 565876910}
---- !u!114 &1765386124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1765386123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e542aa3a82e94bdd83e421f153e1c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  diameter: 0.3164654
---- !u!114 &1765386128
+--- !u!114 &1790959137 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1765386123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToolName: Distance Tool 1
-  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  initialized: 1
-  initialName: Distance Tool 1
-  startPoint: {x: -3.587953, y: 1.3476429, z: 0}
-  endPoint: {x: -3.5804393, y: 2.1595802, z: 0}
-  distance: 0
-  gizmoRadius: 0.1
-  scaleToPixels: 0
-  pixelPerUnit: 128
---- !u!1 &1790959136 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1467788653828512, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
+  m_PrefabParentObject: {fileID: 114022103055372024, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
     type: 2}
   m_PrefabInternal: {fileID: 565876910}
---- !u!114 &1790959137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1790959136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e542aa3a82e94bdd83e421f153e1c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 3
-  diameter: 0.5179757
---- !u!114 &1790959141
+--- !u!114 &1912404122 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1790959136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToolName: Distance Tool 3
-  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  initialized: 1
-  initialName: Distance Tool 3
-  startPoint: {x: -3.4193892, y: -0.96542233, z: 0}
-  endPoint: {x: -3.4203975, y: 0.28464645, z: 0}
-  distance: 0
-  gizmoRadius: 0.1
-  scaleToPixels: 0
-  pixelPerUnit: 128
---- !u!1 &1912404121 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1101065618917048, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
+  m_PrefabParentObject: {fileID: 114628248012966668, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
     type: 2}
   m_PrefabInternal: {fileID: 565876910}
---- !u!114 &1912404122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1912404121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e542aa3a82e94bdd83e421f153e1c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 0
-  diameter: 0.2607345
---- !u!114 &1912404126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1912404121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToolName: Distance Tool 5
-  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  initialized: 1
-  initialName: Distance Tool 5
-  startPoint: {x: -3.6328032, y: 2.1832848, z: 0}
-  endPoint: {x: -3.629801, y: 2.9185412, z: 0}
-  distance: 0
-  gizmoRadius: 0.1
-  scaleToPixels: 0
-  pixelPerUnit: 128
 --- !u!114 &1956800961 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114485378548626348, guid: dbbd88b6355b2f84bab327bbb8f718c1,
@@ -881,42 +579,9 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 76970892}
   m_Script: {fileID: 11500000, guid: ee9ce4a6d3feb4cbcb441fbb5493f6a5, type: 3}
---- !u!1 &2089933790 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1042388064882004, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
+--- !u!114 &2089933791 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114952751817360988, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
     type: 2}
   m_PrefabInternal: {fileID: 565876910}
---- !u!114 &2089933791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2089933790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e542aa3a82e94bdd83e421f153e1c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 4
-  diameter: 0.59155697
---- !u!114 &2089933795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2089933790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToolName: Distance Tool 2
-  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  initialized: 1
-  initialName: Distance Tool 2
-  startPoint: {x: -3.0932996, y: -2.3834615, z: 0}
-  endPoint: {x: -3.0955353, y: -1.0551064, z: 0}
-  distance: 0
-  gizmoRadius: 0.1
-  scaleToPixels: 0
-  pixelPerUnit: 128
