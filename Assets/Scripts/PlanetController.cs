@@ -27,14 +27,23 @@ public class PlanetController : MonoBehaviour {
 	private bool isClimbing = false;
 	private bool isFalling = false;
 	private bool isMovingHorizontal = false;
+	private BoxCollider2D boxCollider;
 	private EverythingController gameController;
 
 	void Start(){
 		gameController = GameObject.FindObjectOfType<EverythingController>();
+		boxCollider = GetComponent<BoxCollider2D> ();
+		diameter = (boxCollider.size.y / Default.averageRatio) / 2;
+		Debug.Log (name + ": " + diameter);
 	}
 
 	void Update() {
 		if (isClimbing && Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 0.4) {
+			if (Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 1) {
+				Vector3 pos = new Vector3 (transform.localPosition.x, Default.planetRoof, transform.localPosition.z);
+				transform.localPosition = pos;
+				isClimbing = false;
+			}
 			transform.position += Vector3.up;
 		} else {
 			isClimbing = false;
