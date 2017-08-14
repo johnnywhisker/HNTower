@@ -78,6 +78,7 @@ public class PlanetController : MonoBehaviour {
 
 	public void MoveTo(int stack){
 		isMovingHorizontal = true;
+		desireStack = stack;
 	}
 	public void DropDown() {
 		isFalling = true;
