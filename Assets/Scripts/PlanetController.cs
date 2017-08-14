@@ -38,7 +38,7 @@ public class PlanetController : MonoBehaviour {
 	}
 
 	void Update() {
-		if (isClimbing && Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 0.4) {
+		if (isClimbing && Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 0.5) {
 			if (Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 1) {
 				Vector3 pos = new Vector3 (transform.localPosition.x, Default.planetRoof, transform.localPosition.z);
 				transform.localPosition = pos;
@@ -49,7 +49,7 @@ public class PlanetController : MonoBehaviour {
 			isClimbing = false;
 		}
 
-		if (isFalling && Mathf.Abs (transform.localPosition.y - gameController.stacks[gameController.CurrentStack].nextDropLongtitude + diameter) > 0.4) {
+		if (isFalling && Mathf.Abs (transform.localPosition.y - gameController.stacks[gameController.CurrentStack].nextDropLongtitude + diameter) > 0.5) {
 			if (Mathf.Abs(transform.localPosition.y - gameController.stacks[gameController.CurrentStack].nextDropLongtitude + diameter) > 0.5) {
 				Vector3 pos = new Vector3 (transform.localPosition.x, gameController.stacks [gameController.CurrentStack].nextDropLongtitude + diameter, transform.localPosition.z);
 				transform.localPosition = pos;
@@ -60,7 +60,7 @@ public class PlanetController : MonoBehaviour {
 			isFalling = false;
 		}
 
-		if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.3) {
+		if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.5) {
 			if (transform.localPosition.x < gameController.stacks [desireStack].transform.localPosition.x) {
 				transform.localPosition += Vector3.right;
 			} else {

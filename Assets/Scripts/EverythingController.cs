@@ -106,6 +106,7 @@ public class EverythingController : MonoBehaviour,IToAll {
 				currentPlanet.DropDown ();
 				stacks [currentStack].planets.Add (currentPlanet);
 				stacks [currentStack].nextDropLongtitude += currentPlanet.diameter;
+				currentPlanet.CurrentStack = currentStack;
 				currentPlanet = null;
 				return true;
 			}
@@ -113,6 +114,7 @@ public class EverythingController : MonoBehaviour,IToAll {
 				currentPlanet.DropDown ();
 				stacks [currentStack].planets.Add (currentPlanet);
 				stacks [currentStack].nextDropLongtitude += currentPlanet.diameter;
+				currentPlanet.CurrentStack = currentStack;
 				currentPlanet = null;
 				return true;
 			}
