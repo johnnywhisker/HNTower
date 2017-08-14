@@ -4,36 +4,38 @@ using UnityEngine;
 
 public class UFOController : MonoBehaviour {
 
+    // Calling outer classes
+    private StackController[] stacks;
+
     // UFO vertical movement effect
     private float roof = 3f; // The highest position UFO can get to
     private float bottom = 3f; // The lowest position UFO can get to
-
+    private Vector3 primaryPos;
     // UFO state
     private bool isUp = true;
-    private bool isMovHor = true;
     private Vector3 ufoPos;
     public float speed;
+    //public float shakeSpeed;
+    public bool isAngry = false;
+    public int loopTimes = 5;
 
-    // UFO Position
-    //private Vector3 pos1, pos2, pos3;
-    //private Vector3 dest; // Destination UFO desires to go
+    // Counting Time for shaking
+    private float second = 0;
 
     // Use this for initialization
     void Start()
     {
+        isAngry = false;
         roof = transform.position.y + 0.5f;
         bottom = transform.position.y - 0.35f;
-
-        // Postions of UFO correspond with stacks 
-        //pos1 = new Vector3(-6.61f, 3.439999f, -2.46f);
-        //pos2 = new Vector3(-2.27f, 3.63f, -2.46f);
-        //pos3 = new Vector3(2.07f, 3.7f, -2.46f);
-        //dest = pos1; // UFO sets stack 1 as first play to come when the game starts
+        second = Time.realtimeSinceStartup;
+        primaryPos = this.transform.localPosition;
     }
 	
 	// Update is called once per frame
 	void Update () {
         ufoMovVer();
+        UFOGetAngry();
 	}
 
     // UFO movement
@@ -56,6 +58,35 @@ public class UFOController : MonoBehaviour {
         }
         transform.position = ufoPos;
     }
+    public void UFOGetAngry()
+    {
+        if (isAngry && second <= 3)
+        {
+            Vector3 pos = primaryPos;
+            Vector3 left = new Vector3(0.2f, 0, 0);
+            Vector3 right = new Vector3(-0.2f, 0, 0);
+            if (Mathf.Round(second * 800) % 2 == 0)
+            {
+                Debug.Log("LEFT");
+                pos += left;
+            }
+            else
+            {
+                Debug.Log("RIGHT");
+                pos += right;
+            }
+
+            transform.localPosition = pos;
+            second = Time.realtimeSinceStartup;
+        }
+        if (second > 3)
+        {
+            isAngry = false;
+            second = 0;
+            transform.localPosition = primaryPos;
+        }
+    }
+
 
 
 }

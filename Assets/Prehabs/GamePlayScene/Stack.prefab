@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 212235427854636134}
   - component: {fileID: 114546364192566924}
   - component: {fileID: 136926096212922690}
+  - component: {fileID: 114793472260810738}
   m_Layer: 0
   m_Name: laserLightC
   m_TagString: Untagged
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269341300818948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.601, y: -0.669, z: -0.41}
+  m_LocalPosition: {x: -3.62, y: -0.669, z: -0.41}
   m_LocalScale: {x: 0.22194, y: 0.22194, z: 0.22194}
   m_Children: []
   m_Father: {fileID: 4012253832156884}
@@ -116,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445145268391652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.043, y: -0.682, z: -0.40999985}
+  m_LocalPosition: {x: 5.043, y: -0.682, z: -0.41}
   m_LocalScale: {x: 0.22194, y: 0.22194, z: 0.22194}
   m_Children: []
   m_Father: {fileID: 4012253832156884}
@@ -129,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384765447996542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.727, y: -0.669, z: -0.40999985}
+  m_LocalPosition: {x: 0.727, y: -0.669, z: -0.41}
   m_LocalScale: {x: 0.22194025, y: 0.22194025, z: 0.22194025}
   m_Children: []
   m_Father: {fileID: 4012253832156884}
@@ -147,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planets: []
+  stackNumber: 1
+  nextDropLongtitude: -3.65
 --- !u!114 &114418067729493776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,6 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planets: []
+  stackNumber: 0
+  nextDropLongtitude: -3.65
 --- !u!114 &114546364192566924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,6 +176,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planets: []
+  stackNumber: 2
+  nextDropLongtitude: -3.65
+--- !u!114 &114793472260810738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1445145268391652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToolName: Distance Tool 2
+  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  initialized: 1
+  initialName: Distance Tool 2
+  startPoint: {x: -4.3386736, y: 2.0789123, z: 0}
+  endPoint: {x: -4.3378673, y: 1.730199, z: 0}
+  distance: 0
+  gizmoRadius: 0.1
+  scaleToPixels: 0
+  pixelPerUnit: 128
 --- !u!136 &136625466334743462
 CapsuleCollider:
   m_ObjectHideFlags: 1
