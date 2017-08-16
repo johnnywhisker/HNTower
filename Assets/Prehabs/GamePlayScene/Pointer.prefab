@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984435314007792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.36, y: 3.483999, z: -2.46}
+  m_LocalPosition: {x: -3.58, y: 3.76, z: -2.46}
   m_LocalScale: {x: 0.24616694, y: 0.24616694, z: 0.24616694}
   m_Children: []
   m_Father: {fileID: 4725140904686362}
@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985700241411450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.08, y: 0.38989368, z: 0.18523028}
+  m_LocalPosition: {x: -0.7275591, y: 0.07966943, z: 0.07421875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4478713515764998}
@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e9d2f66b22d467e8f255a7d2e1f2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastStackPlanetCoordinate: 0
   speed: 0.011
-  shakeSpeed: 0.5
   isAngry: 1
   loopTimes: 5
 --- !u!212 &212216917719361454

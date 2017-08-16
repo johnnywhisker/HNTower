@@ -4,8 +4,8 @@ using UnityEngine;
 using System.Linq;
 public class PlanetController : MonoBehaviour {
 
-	public int weight;
-	public float diameter;
+	public int weight; // Orders of the planets
+	public float diameter; // The name say it all
 	public int CurrentStack {get{ return currentStack;
 		} set { 
 			if (value >=0 && value <= 2 ){				
@@ -22,7 +22,7 @@ public class PlanetController : MonoBehaviour {
 			return false;
 		}
 	}
-	private int currentStack;
+	private int currentStack; 
 	private int desireStack;
 	private float lastStackPlanetCoordinate;
 	private bool isClimbing = false;
@@ -75,7 +75,10 @@ public class PlanetController : MonoBehaviour {
 			isFalling = false;
 		}
 
-		if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.5) {
+        Vector3 left = new Vector3(0.2f, 0, 0);
+        Vector3 right = new Vector3(-0.2f, 0, 0);
+
+        if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.5) {
 			if (transform.localPosition.x < gameController.stacks [desireStack].transform.localPosition.x) {
 				float xCoordinate = gameController.stacks [desireStack].transform.localPosition.x;
 				Debug.Log (transform.localPosition.y);

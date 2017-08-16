@@ -30,8 +30,13 @@ public class EverythingController : MonoBehaviour,IToAll {
 			this.currentStack = value;
 			if (currentPlanet != null) {
 				currentPlanet.MoveTo (value);
+                ufo.MoveTo(value);
 				willBeDroped = true;
 			}
+            if (currentPlanet == null)
+            {
+                PickUpPlanet();
+            }
 		} get {
 			return currentStack;
 		}

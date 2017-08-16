@@ -5,7 +5,8 @@ using UnityEngine;
 public class UFOController : MonoBehaviour {
 
     // Calling outer classes
-    private StackController[] stacks;
+    private PlanetController planets;
+    private EverythingController gameController;
 
     // UFO vertical movement effect
     private float roof = 3f; // The highest position UFO can get to
@@ -13,12 +14,14 @@ public class UFOController : MonoBehaviour {
     private Vector3 primaryPos;
     // UFO state
     private bool isUp = true;
+    public float lastStackPlanetCoordinate;
     private Vector3 ufoPos;
+    private bool isMovingHorizontal = false;
     public float speed;
     //public float shakeSpeed;
     public bool isAngry = false;
     public int loopTimes = 5;
-
+    private int desireStack = 0;
     // Counting Time for shaking
     private float second = 0;
 
@@ -30,13 +33,33 @@ public class UFOController : MonoBehaviour {
         bottom = transform.position.y - 0.35f;
         second = Time.realtimeSinceStartup;
         primaryPos = this.transform.localPosition;
+        gameController = GameObject.FindObjectOfType<EverythingController>();
     }
 	
 	// Update is called once per frame
 	void Update () {
         ufoMovVer();
         UFOGetAngry();
-	}
+        if (isMovingHorizontal && Mathf.Abs(transform.localPosition.x - gameController.stacks[desireStack].transform.localPosition.x) > 0.5)
+        {
+            if (transform.localPosition.x < gameController.stacks[desireStack].transform.localPosition.x)
+            {
+                float xCoordinate = gameController.stacks[desireStack].transform.localPosition.x;
+                Debug.Log(transform.localPosition.y);
+                Vector3 pos = new Vector3(xCoordinate, transform.localPosition.y, transform.localPosition.z);
+                transform.localPosition = pos;
+                transform.localPosition += Vector3.right;
+            }
+            else
+            {
+                transform.localPosition += Vector3.left;
+            }
+        }
+        else
+        {
+            isMovingHorizontal = false;
+        }
+    }
 
     // UFO movement
     public void ufoMovVer()
@@ -87,6 +110,22 @@ public class UFOController : MonoBehaviour {
         }
     }
 
-
+    public void MoveTo(int stack)
+    {
+        isMovingHorizontal = true;
+        desireStack = stack;
+        if (desireStack == 1 && gameController.stacks[desireStack].planets.Count == 0)
+        {
+            lastStackPlanetCoordinate = gameController.stacks[desireStack - 1].GetTopPlanet().transform.localPosition.y + gameController.stacks[desireStack - 1].GetTopPlanet().diameter;
+        }
+        else if (desireStack == 2 && gameController.stacks[desireStack].planets.Count == 0)
+        {
+            lastStackPlanetCoordinate = gameController.stacks[0].GetTopPlanet().transform.localPosition.y + gameController.stacks[0].GetTopPlanet().diameter;
+        }
+        else
+        {
+            lastStackPlanetCoordinate = gameController.stacks[desireStack].GetTopPlanet().transform.localPosition.y + gameController.stacks[desireStack].GetTopPlanet().diameter;
+        }
+    }
 
 }
