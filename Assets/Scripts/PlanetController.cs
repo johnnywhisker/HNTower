@@ -45,6 +45,7 @@ public class PlanetController : MonoBehaviour {
 				transform.localPosition = pos;
 				isClimbing = false;
 			}
+			lastStackPlanetCoordinate = gameController.stacks [currentStack].GetTopPlanet ().transform.localPosition.y + gameController.stacks[desireStack].GetTopPlanet().diameter;
 			transform.position += Vector3.up;
 		} else {
 			isClimbing = false;
