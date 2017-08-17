@@ -40,25 +40,7 @@ public class UFOController : MonoBehaviour {
 	void Update () {
         ufoMovVer();
         UFOGetAngry();
-        if (isMovingHorizontal && Mathf.Abs(transform.localPosition.x - gameController.stacks[desireStack].transform.localPosition.x) > 0.5)
-        {
-            if (transform.localPosition.x < gameController.stacks[desireStack].transform.localPosition.x)
-            {
-                float xCoordinate = gameController.stacks[desireStack].transform.localPosition.x;
-                Debug.Log(transform.localPosition.y);
-                Vector3 pos = new Vector3(xCoordinate, transform.localPosition.y, transform.localPosition.z);
-                transform.localPosition = pos;
-                transform.localPosition += Vector3.right;
-            }
-            else
-            {
-                transform.localPosition += Vector3.left;
-            }
-        }
-        else
-        {
-            isMovingHorizontal = false;
-        }
+        ufoMovHor();
     }
 
     // UFO movement
@@ -80,6 +62,28 @@ public class UFOController : MonoBehaviour {
                 isUp = true;
         }
         transform.position = ufoPos;
+    }
+    public void ufoMovHor()
+    {
+        if (isMovingHorizontal && Mathf.Abs(transform.localPosition.x - gameController.stacks[desireStack].transform.localPosition.x) > 0.5)
+        {
+            if (transform.localPosition.x < gameController.stacks[desireStack].transform.localPosition.x)
+            {
+                float xCoordinate = gameController.stacks[desireStack].transform.localPosition.x;
+                Debug.Log(transform.localPosition.y);
+                Vector3 pos = new Vector3(xCoordinate, transform.localPosition.y, transform.localPosition.z);
+                transform.localPosition = pos;
+                transform.localPosition += Vector3.right;
+            }
+            else
+            {
+                transform.localPosition += Vector3.left;
+            }
+        }
+        else
+        {
+            isMovingHorizontal = false;
+        }
     }
     public void UFOGetAngry()
     {
