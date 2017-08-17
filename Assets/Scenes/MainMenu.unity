@@ -108,28 +108,13 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1262354942
+--- !u!1001 &708248581
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114472777768150016, guid: 583d314a9d41ee44f9997e14993b798e,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114315005488189408, guid: 583d314a9d41ee44f9997e14993b798e,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114091233993467956, guid: 583d314a9d41ee44f9997e14993b798e,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224453722962335686, guid: 583d314a9d41ee44f9997e14993b798e,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -285,6 +270,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 566187179f844e64aa83660b9c5e172d, type: 2}
+    - target: {fileID: 223987502626394512, guid: 583d314a9d41ee44f9997e14993b798e,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1532442376}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
   m_IsPrefabParent: 0
