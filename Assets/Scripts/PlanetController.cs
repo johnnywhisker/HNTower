@@ -57,7 +57,7 @@ public class PlanetController : MonoBehaviour {
 				Debug.Log (gameController.stacks [desireStack].planets.Count);
 
 				if (gameController.stacks [desireStack].planets.Count == 1) {
-					Vector3 pos = new Vector3 (xCoordinate, gameController.stacks [gameController.CurrentStack].nextDropLongtitude + diameter, transform.localPosition.z);
+					Vector3 pos = new Vector3 (xCoordinate, -3.65f + diameter, transform.localPosition.z);
 					transform.localPosition = pos;
 					isFalling = false;				
 				}
@@ -105,6 +105,9 @@ public class PlanetController : MonoBehaviour {
 			lastStackPlanetCoordinate = gameController.stacks [desireStack - 1].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack - 1].GetTopPlanet ().diameter;
 		} else if (desireStack == 2 && gameController.stacks [desireStack].planets.Count == 0) {
 			lastStackPlanetCoordinate = gameController.stacks [0].GetTopPlanet ().transform.localPosition.y + gameController.stacks [0].GetTopPlanet ().diameter;
+		}
+		else if (desireStack == 0 && gameController.stacks[desireStack].planets.Count == 0) {
+			lastStackPlanetCoordinate = -3.65f;
 		}
 		else {
 			lastStackPlanetCoordinate = gameController.stacks [desireStack].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack].GetTopPlanet ().diameter;
