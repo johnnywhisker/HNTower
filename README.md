@@ -2,7 +2,7 @@
 
 **Hanoi Tower UFO** is a game for fun
 
-Submitted by **Dang Khoi Nguyen**
+Submitted by **Dang Khoi Nguyen** and **Dang Quang Minh**
 
 **Major** : Computer Science of Hoa Sen University
 
