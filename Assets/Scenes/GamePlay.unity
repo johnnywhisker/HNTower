@@ -239,6 +239,11 @@ Prefab:
       propertyPath: ufo
       value: 
       objectReference: {fileID: 1956800961}
+    - target: {fileID: 114940159268958314, guid: 2c61a0d03109a9b4ca899454f6bd505c,
+        type: 2}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1908798814}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c61a0d03109a9b4ca899454f6bd505c, type: 2}
   m_IsPrefabParent: 0
@@ -331,6 +336,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &448774450 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224315572187425288, guid: 5b828f22aac499a448d06183ac50b5de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1660441200}
 --- !u!1001 &565876910
 Prefab:
   m_ObjectHideFlags: 0
@@ -608,6 +618,80 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 565876910}
   m_Script: {fileID: 11500000, guid: 9e542aa3a82e94bdd83e421f153e1c99, type: 3}
+--- !u!1 &1908798812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1908798813}
+  - component: {fileID: 1908798815}
+  - component: {fileID: 1908798814}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1908798813
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908798812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 448774450}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 195.8, y: 73}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &1908798814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908798812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Score: '
+--- !u!222 &1908798815
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908798812}
 --- !u!114 &1912404122 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114628248012966668, guid: 432adcb7b4366eb44a0de6135d9ed1f6,
