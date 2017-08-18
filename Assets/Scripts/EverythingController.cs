@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public interface IUFOTransponder {
 	
@@ -20,12 +21,16 @@ public static class Default{
 	public const float stackBottom = -3.65f;
 	public const float averageRatio = 4.5333952f;
 
+
 }
 
 public class EverythingController : MonoBehaviour,IToAll {
 	public PlanetController[] planets;
 	public StackController[] stacks;
+	public Text score;
+	private int theScore = 0;
 	public UFOController ufo;
+
 	public int CurrentStack {set { 
 			this.currentStack = value;
 			if (currentPlanet != null) {
@@ -50,6 +55,8 @@ public class EverythingController : MonoBehaviour,IToAll {
 
 	void Start() {
     int difficulty = buttonHandler.difficulty_selection;
+	
+	
     switch(difficulty) {
       case 1: setupPlanets(3);
               break;
@@ -84,6 +91,8 @@ public class EverythingController : MonoBehaviour,IToAll {
   }
 
 	void Update() {
+		score.text = "Move: " + theScore;
+		PlayerPrefs.SetInt ("Score", theScore);
 		if (stacks [0].planets.Count != currentA || stacks [1].planets.Count != currentB) {
 			Debug.Log (stacks [0].planets.Count);
 			Debug.Log (stacks [1].planets.Count);
@@ -131,7 +140,9 @@ public class EverythingController : MonoBehaviour,IToAll {
 				stacks [currentStack].nextDropLongtitude += currentPlanet.diameter;
 				currentPlanet.CurrentStack = currentStack;
 				currentPlanet = null;
+				theScore++;
 				return true;
+
 			}
 			if (currentPlanet.weight < stacks [currentStack].GetTopPlanet ().weight) {
 				currentPlanet.DropDown ();
@@ -140,6 +151,7 @@ public class EverythingController : MonoBehaviour,IToAll {
 				Debug.Log ("CHESES" + stacks[currentStack].nextDropLongtitude);
 				currentPlanet.CurrentStack = currentStack;
 				currentPlanet = null;
+				theScore++;
 				return true;
 			}
 		}

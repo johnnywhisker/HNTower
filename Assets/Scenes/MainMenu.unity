@@ -275,6 +275,38 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1532442376}
+    - target: {fileID: 4134225959708930, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134225959708930, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 24.565945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134225959708930, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 25.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134225959708930, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 25.051926
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109432228179992, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109432228179992, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 15.181587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109432228179992, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109432228179992, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 16.805553
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 583d314a9d41ee44f9997e14993b798e, type: 2}
   m_IsPrefabParent: 0
@@ -407,7 +439,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1532442378
 AudioSource:
