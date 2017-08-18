@@ -76,9 +76,6 @@ public class PlanetController : MonoBehaviour {
 			isFalling = false;
 		}
 
-        Vector3 left = new Vector3(0.2f, 0, 0);
-        Vector3 right = new Vector3(-0.2f, 0, 0);
-
         if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.5) {
 			if (transform.localPosition.x < gameController.stacks [desireStack].transform.localPosition.x) {
 				float xCoordinate = gameController.stacks [desireStack].transform.localPosition.x;

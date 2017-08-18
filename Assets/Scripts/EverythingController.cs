@@ -16,7 +16,7 @@ public interface IToAll {
 
 public static class Default{
 	public const float speed = 0.5f;
-	public const float planetRoof = 3.3f;
+	public const float planetRoof = 3.31f;
 	public const float stackBottom = -3.65f;
 	public const float averageRatio = 4.5333952f;
 
@@ -30,12 +30,13 @@ public class EverythingController : MonoBehaviour,IToAll {
 			this.currentStack = value;
 			if (currentPlanet != null) {
 				currentPlanet.MoveTo (value);
-                ufo.MoveTo(value);
+				ufo.MoveTo(value);
 				willBeDroped = true;
 			}
             if (currentPlanet == null)
             {
                 PickUpPlanet();
+				ufo.MoveTo(value);
             }
 		} get {
 			return currentStack;
