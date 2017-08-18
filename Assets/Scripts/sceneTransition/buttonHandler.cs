@@ -11,7 +11,7 @@ public class buttonHandler : MonoBehaviour {
 	}
 
 	public void difficultySelection(int difficulty) {
-		SceneManager.LoadScene ("HighScore");
+		SceneManager.LoadScene ("GamePlay");
 		difficulty_selection = difficulty;
 	}
 	

@@ -48,23 +48,39 @@ public class EverythingController : MonoBehaviour,IToAll {
 	private int currentA, currentB;
 
 	void Start() {
-		foreach (PlanetController planet in planets) {
-			planet.CurrentStack = 0;
-			stacks [0].planets.Add (planet);
-		}
-		float previousDiameter = 0;
-		foreach (StackController stack in stacks) {
-			foreach (PlanetController planet in stack.planets) {
-				stack.nextDropLongtitude += (planet.diameter + previousDiameter);
-				previousDiameter = planet.diameter;
-			}
-		}
+    int difficulty = buttonHandler.difficulty_selection;
+    switch(difficulty) {
+      case 1: setupPlanets(3);
+              break;
+      case 2: setupPlanets(4);
+              break;
+      case 3: setupPlanets(5);
+              break;
+      case 4: setupPlanets(6);
+              break;
 
+      default: setupPlanets(6);
+               break;
+    }
 		Debug.Log ("Stack 1 cordinate: " + stacks [0].transform.localPosition);
 		Debug.Log ("LZ coordinate: " + stacks [0].nextDropLongtitude);
 		currentA = stacks [0].planets.Count;
 		currentB = stacks [1].planets.Count;
-	}
+  }
+
+
+  public void setupPlanets(int total_planets) {
+    int i = 0;
+    foreach (PlanetController planet in planets) {
+      i++;
+      if (i >= 0 && i <= total_planets ) {
+        planet.CurrentStack = 0;
+        stacks [0].planets.Add (planet);
+      } else {
+        Destroy(planet.gameObject);
+      }
+    }
+  }
 
 	void Update() {
 		if (stacks [0].planets.Count != currentA || stacks [1].planets.Count != currentB) {
