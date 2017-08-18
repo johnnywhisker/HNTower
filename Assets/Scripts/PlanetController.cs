@@ -77,24 +77,19 @@ public class PlanetController : MonoBehaviour {
     } else {
       isFalling = false;
     }
-
-    Vector3 left = new Vector3(0.2f, 0, 0);
-    Vector3 right = new Vector3(-0.2f, 0, 0);
-
     if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.5) {
-      if (transform.localPosition.x < gameController.stacks [desireStack].transform.localPosition.x) {
-        float xCoordinate = gameController.stacks [desireStack].transform.localPosition.x;
-        Debug.Log (transform.localPosition.y);
-        Vector3 pos = new Vector3 (xCoordinate, transform.localPosition.y, transform.localPosition.z);
-        transform.localPosition = pos;
-        transform.localPosition += Vector3.right;
-      } else {
-        transform.localPosition += Vector3.left;
-      }
-    } else {
-      isMovingHorizontal = false;
-    }
-
+			if (transform.localPosition.x < gameController.stacks [desireStack].transform.localPosition.x) {
+				float xCoordinate = gameController.stacks [desireStack].transform.localPosition.x;
+				Debug.Log (transform.localPosition.y);
+				Vector3 pos = new Vector3 (xCoordinate, transform.localPosition.y, transform.localPosition.z);
+				transform.localPosition = pos;
+				transform.localPosition += Vector3.right;
+			} else {
+				transform.localPosition += Vector3.left;
+			}
+		} else {
+			isMovingHorizontal = false;
+		}
   }
 
   public void MoveUp() {		
