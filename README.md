@@ -13,16 +13,17 @@ The following **required** functionality is completed :
 * [X] User can move UFO arround
 * [X] User can pick up planet (bugs found)
 * [X] User can drop planet (bugs found)
-* [ ] User can move planet arround
-* [ ] Basic game rules applied 
-* [ ] UI completed
+* [X] User can move planet arround
+* [X] Basic game rules applied 
+* [X] UI completed
+* [ ] Level
 
 The following **optional** features are implemented:
 
-* [ ] UFO smooth movement
-* [ ] Planet smooth movement
+* [X] UFO smooth movement
+* [X] Planet smooth movement
 * [X] UFO angry mode
-
+* [ ] High Score
 ## Video Walkthrough
 
 Comming Soon...
