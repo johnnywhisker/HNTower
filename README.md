@@ -16,14 +16,14 @@ The following **required** functionality is completed :
 * [X] User can move planet arround
 * [X] Basic game rules applied 
 * [X] UI completed
-* [ ] Level
+* [X] Level
 
 The following **optional** features are implemented:
 
 * [X] UFO smooth movement
 * [X] Planet smooth movement
 * [X] UFO angry mode
-* [ ] High Score
+* [X] High Score
 ## Video Walkthrough
 
 Comming Soon...
