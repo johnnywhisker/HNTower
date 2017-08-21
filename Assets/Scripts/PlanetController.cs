@@ -25,7 +25,7 @@ public class PlanetController : MonoBehaviour {
   }
   private int currentStack; 
   private int desireStack;
-  public float lastStackPlanetCoordinate;
+  public static float lastStackPlanetCoordinate;
   private bool isClimbing = false;
   private bool isFalling = false;
   private bool isMovingHorizontal = false;
@@ -44,30 +44,18 @@ public class PlanetController : MonoBehaviour {
   }
   
   void Update() {
-		if (moivingProtocol) {
-			MoveUp ();
-		}
     if (isClimbing && Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 0.5) {
-			if (moivingProtocol) {
-				onTheMove = true;
-
-			}
       if (Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 1) {
         Vector3 pos = new Vector3 (transform.localPosition.x, Default.planetRoof, transform.localPosition.z);
         transform.localPosition = pos;
-		if (moivingProtocol) {
-			
-			MoveTo (2);
-		}
         isClimbing = false;
       }
-     lastStackPlanetCoordinate = gameController.stacks [currentStack].GetTopPlanet ().transform.localPosition.y + gameController.stacks[desireStack].GetTopPlanet().diameter;
+		if (EverythingController.isAutoPlay) {
+		} else {
+			lastStackPlanetCoordinate = gameController.stacks [currentStack].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack].GetTopPlanet ().diameter;
+		}
       transform.position += Vector3.up;
     } else {
-	if (moivingProtocol&&onTheMove) {
-		
-		MoveTo (2);
-			}
       isClimbing = false;
     }
 
@@ -81,16 +69,12 @@ public class PlanetController : MonoBehaviour {
           Vector3 pos = new Vector3 (xCoordinate, -3.65f + diameter, transform.localPosition.z);
           transform.localPosition = pos;
           isFalling = false;			
-			if (moivingProtocol && onTheMove)
-				moivingProtocol = false;
         }
         else {
           Debug.Log ("MHAHA" + lastStackPlanetCoordinate);
           Vector3 pos = new Vector3 (xCoordinate, lastStackPlanetCoordinate + 1 + diameter, transform.localPosition.z);
           transform.localPosition = pos;
           isFalling = false;		
-					if (moivingProtocol && onTheMove)
-						moivingProtocol = false;
         }
 
 
@@ -98,9 +82,6 @@ public class PlanetController : MonoBehaviour {
       transform.position += Vector3.down;
     } else {
       isFalling = false;
-			if (moivingProtocol && onTheMove) {
-				moivingProtocol = false;
-			}
 				
     }
     if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.5) {
@@ -114,13 +95,7 @@ public class PlanetController : MonoBehaviour {
 				transform.localPosition += Vector3.left;
 			}
 		} else {
-			if (moivingProtocol&&onTheMove) {
-				DropDown ();
-			}
 			isMovingHorizontal = false;
-		}
-		if (moivingProtocol&&onTheMove) {
-			DropDown ();
 		}
   }
 
@@ -131,14 +106,15 @@ public class PlanetController : MonoBehaviour {
   public void MoveTo(int stack){
     isMovingHorizontal = true;
     desireStack = stack;
-    if (desireStack == 1 && gameController.stacks [desireStack].planets.Count == 0) {
-      lastStackPlanetCoordinate = gameController.stacks [desireStack - 1].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack - 1].GetTopPlanet ().diameter;
-    } else if (desireStack == 2 && gameController.stacks [desireStack].planets.Count == 0) {
-      lastStackPlanetCoordinate = gameController.stacks [0].GetTopPlanet ().transform.localPosition.y + gameController.stacks [0].GetTopPlanet ().diameter;
-    }
-    else if (desireStack == 0 && gameController.stacks[desireStack].planets.Count == 0) {
-      lastStackPlanetCoordinate = -3.65f;
-    }
+		if (desireStack == 1 && gameController.stacks [desireStack].planets.Count == 0) {
+			lastStackPlanetCoordinate = gameController.stacks [desireStack - 1].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack - 1].GetTopPlanet ().diameter;
+		} else if (desireStack == 2 && gameController.stacks [desireStack].planets.Count == 0) {
+			lastStackPlanetCoordinate = gameController.stacks [0].GetTopPlanet ().transform.localPosition.y + gameController.stacks [0].GetTopPlanet ().diameter;
+		} else if (desireStack == 0 && gameController.stacks [desireStack].planets.Count == 0) {
+			lastStackPlanetCoordinate = -3.65f;
+		} else if (EverythingController.isAutoPlay) {
+      lastStackPlanetCoordinate = gameController.stacks [desireStack].GetTopPlanet ().diameter;
+		}
     else {
       lastStackPlanetCoordinate = gameController.stacks [desireStack].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack].GetTopPlanet ().diameter;
     } 

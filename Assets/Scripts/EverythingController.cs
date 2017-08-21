@@ -28,13 +28,14 @@ public static class Default{
 public class EverythingController : MonoBehaviour,IToAll {
 	public PlanetController[] planets;
 	public StackController[] stacks;
-	private List<PlanetController> progressList;
-	private bool isDone = false;
+	private Stack<PlanetController> progressStack;
 	public Text score;
 	private int theScore = 0;
 	private bool overideProtocol = false;
 	public List<PlanetController> reversedPlanets;
 	public UFOController ufo;
+	public static bool isAutoPlay = false;
+	public static float totalPlanetsCoordinate = 0;
 	public int CurrentStack {set { 
 			this.currentStack = value;
 			if (currentPlanet != null) {
@@ -60,7 +61,6 @@ public class EverythingController : MonoBehaviour,IToAll {
 	void Start() {
     int difficulty = buttonHandler.difficulty_selection;
 	
-		progressList = new List<PlanetController> ();
     switch(difficulty) {
       case 1: setupPlanets(3);
               break;
@@ -107,15 +107,13 @@ public class EverythingController : MonoBehaviour,IToAll {
 			PickUpPlanet ();
 		}
 		if (Input.GetKeyUp (KeyCode.D)) {
-			overideProtocol = true;
 			Debug.Log ("KEY ACTIVATED");
+			isAutoPlay = true;
 			var init_list = initStack ();
 			dynamicTransfer (init_list, 0, 2, stacks[0].planets.Count);
-			foreach (PlanetController planet in init_list[2]) {				
-				progressList.Add (planet);
-
+			foreach (var planet in init_list[2]) {
+				planet.MoveTo (2);
 			}
-			isDone = true;
 		}
 		if (willBeDroped) {
 			if (currentPlanet != null) {
@@ -141,15 +139,9 @@ public class EverythingController : MonoBehaviour,IToAll {
 	public void dynamicTransfer(List<Stack<PlanetController>> nestedPlanets, int startStack, int endStack, int total) {
 		
 		if (total == 1) {
-			nestedPlanets [endStack].Push (nestedPlanets [startStack].Pop());
-			CurrentStack = startStack;
-			stacks [endStack].planets.Add (currentPlanet);
-			currentPlanet.CurrentStack = endStack;
-			if (stacks [endStack].planets.Count == 0) {
-				currentPlanet.lastStackPlanetCoordinate = -3.65f;
-			}
-			CurrentStack = endStack;
-			currentPlanet = null;
+			PlanetController planet = nestedPlanets [startStack].Pop ();
+			nestedPlanets [endStack].Push (planet);
+
 		} else {
 			int aux = 3 - startStack - endStack;
 			dynamicTransfer (nestedPlanets, startStack, aux, total - 1);
