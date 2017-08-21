@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System;
+using System.Linq;
 public interface IUFOTransponder {
 	
 }
@@ -29,8 +30,8 @@ public class EverythingController : MonoBehaviour,IToAll {
 	public StackController[] stacks;
 	public Text score;
 	private int theScore = 0;
+	public List<PlanetController> reversedPlanets;
 	public UFOController ufo;
-
 	public int CurrentStack {set { 
 			this.currentStack = value;
 			if (currentPlanet != null) {
@@ -89,7 +90,6 @@ public class EverythingController : MonoBehaviour,IToAll {
       }
     }
   }
-
 	void Update() {
 		score.text = "Move: " + theScore;
 		PlayerPrefs.SetInt ("Score", theScore);
@@ -104,6 +104,11 @@ public class EverythingController : MonoBehaviour,IToAll {
 		}
 		if (Input.GetKeyUp (KeyCode.D)) {
 			Debug.Log ("KEY ACTIVATED");
+			var init_list = initStack ();
+			dynamicTransfer (init_list, 0, 2, stacks[0].planets.Count);
+			foreach (PlanetController planet in init_list[2]) {
+
+			}
 			DropDownPlanet ();
 		}
 		if (willBeDroped) {
@@ -116,7 +121,28 @@ public class EverythingController : MonoBehaviour,IToAll {
 			}
 		}
 	}
+	public List<Stack<PlanetController>> initStack() {
+		List<Stack<PlanetController>> list = new List<Stack<PlanetController>> ();
+		Stack<PlanetController> stack = new Stack<PlanetController> (stacks[0].planets);
+		Stack<PlanetController> stack1 = new Stack<PlanetController> ();
+		Stack<PlanetController> stack2 = new Stack<PlanetController> ();
+		list.Add (stack);
+		list.Add (stack1);
+		list.Add (stack2);
+		return list;
+	}
 
+	public void dynamicTransfer(List<Stack<PlanetController>> nestedPlanets, int startStack, int endStack, int total) {
+		
+		if (total == 1) {
+			nestedPlanets [endStack].Push (nestedPlanets [startStack].Pop());
+		} else {
+			int aux = 3 - startStack - endStack;
+			dynamicTransfer (nestedPlanets, startStack, aux, total - 1);
+			dynamicTransfer (nestedPlanets, startStack, endStack, 1);
+			dynamicTransfer (nestedPlanets, aux, endStack, total - 1);
+		}
+	}
 	public bool PickUpPlanet() {
 		if (currentPlanet != null) {
 			return false;
