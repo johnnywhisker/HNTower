@@ -111,9 +111,6 @@ public class EverythingController : MonoBehaviour,IToAll {
 			isAutoPlay = true;
 			var init_list = initStack ();
 			dynamicTransfer (init_list, 0, 2, stacks[0].planets.Count);
-			foreach (var planet in init_list[2]) {
-				planet.MoveTo (2);
-			}
 		}
 		if (willBeDroped) {
 			if (currentPlanet != null) {
@@ -141,7 +138,13 @@ public class EverythingController : MonoBehaviour,IToAll {
 		if (total == 1) {
 			PlanetController planet = nestedPlanets [startStack].Pop ();
 			nestedPlanets [endStack].Push (planet);
-
+			bool isExist = stacks [endStack].planets.Any (x => x.name == planet.name);
+			if (!isExist) {
+				stacks [endStack].planets.Add (planet);
+			}
+			planet.MoveUp ();
+			planet.MoveTo (endStack);
+			planet.DropDown ();
 		} else {
 			int aux = 3 - startStack - endStack;
 			dynamicTransfer (nestedPlanets, startStack, aux, total - 1);

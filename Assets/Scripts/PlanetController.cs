@@ -113,8 +113,9 @@ public class PlanetController : MonoBehaviour {
 		} else if (desireStack == 0 && gameController.stacks [desireStack].planets.Count == 0) {
 			lastStackPlanetCoordinate = -3.65f;
 		} else if (EverythingController.isAutoPlay) {
-      lastStackPlanetCoordinate = gameController.stacks [desireStack].GetTopPlanet ().diameter;
-		}
+			Debug.Log ("TRIGGER");
+			lastStackPlanetCoordinate = -4.65f;
+ 		}
     else {
       lastStackPlanetCoordinate = gameController.stacks [desireStack].GetTopPlanet ().transform.localPosition.y + gameController.stacks [desireStack].GetTopPlanet ().diameter;
     } 
