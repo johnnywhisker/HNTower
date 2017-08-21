@@ -16,6 +16,7 @@ public class PlanetController : MonoBehaviour {
     }
   }
   }
+	public bool isActive = false;
   public bool isMoving {get{ 
     if (isClimbing || isMovingHorizontal || isFalling)
       return true;
@@ -24,12 +25,14 @@ public class PlanetController : MonoBehaviour {
   }
   private int currentStack; 
   private int desireStack;
-  private float lastStackPlanetCoordinate;
+  public float lastStackPlanetCoordinate;
   private bool isClimbing = false;
   private bool isFalling = false;
   private bool isMovingHorizontal = false;
+	private bool onTheMove = false;
   private BoxCollider2D boxCollider;
   private EverythingController gameController;
+	public bool moivingProtocol = false;
 
   void Start(){
     gameController = GameObject.FindObjectOfType<EverythingController>();
@@ -39,17 +42,32 @@ public class PlanetController : MonoBehaviour {
     Debug.Log("TOTAL PLANEST" + gameController.stacks[0].planets.Count);
     Debug.Log("THE DIFFICULTY:" + buttonHandler.difficulty_selection);
   }
-
+  
   void Update() {
+		if (moivingProtocol) {
+			MoveUp ();
+		}
     if (isClimbing && Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 0.5) {
+			if (moivingProtocol) {
+				onTheMove = true;
+
+			}
       if (Mathf.Abs (transform.localPosition.y - Default.planetRoof) > 1) {
         Vector3 pos = new Vector3 (transform.localPosition.x, Default.planetRoof, transform.localPosition.z);
         transform.localPosition = pos;
+		if (moivingProtocol) {
+			
+			MoveTo (2);
+		}
         isClimbing = false;
       }
      lastStackPlanetCoordinate = gameController.stacks [currentStack].GetTopPlanet ().transform.localPosition.y + gameController.stacks[desireStack].GetTopPlanet().diameter;
       transform.position += Vector3.up;
     } else {
+	if (moivingProtocol&&onTheMove) {
+		
+		MoveTo (2);
+			}
       isClimbing = false;
     }
 
@@ -62,13 +80,17 @@ public class PlanetController : MonoBehaviour {
         if (gameController.stacks [desireStack].planets.Count == 1) {
           Vector3 pos = new Vector3 (xCoordinate, -3.65f + diameter, transform.localPosition.z);
           transform.localPosition = pos;
-          isFalling = false;				
+          isFalling = false;			
+			if (moivingProtocol && onTheMove)
+				moivingProtocol = false;
         }
         else {
           Debug.Log ("MHAHA" + lastStackPlanetCoordinate);
           Vector3 pos = new Vector3 (xCoordinate, lastStackPlanetCoordinate + 1 + diameter, transform.localPosition.z);
           transform.localPosition = pos;
           isFalling = false;		
+					if (moivingProtocol && onTheMove)
+						moivingProtocol = false;
         }
 
 
@@ -76,6 +98,10 @@ public class PlanetController : MonoBehaviour {
       transform.position += Vector3.down;
     } else {
       isFalling = false;
+			if (moivingProtocol && onTheMove) {
+				moivingProtocol = false;
+			}
+				
     }
     if (isMovingHorizontal && Mathf.Abs (transform.localPosition.x - gameController.stacks [desireStack].transform.localPosition.x) > 0.5) {
 			if (transform.localPosition.x < gameController.stacks [desireStack].transform.localPosition.x) {
@@ -88,7 +114,13 @@ public class PlanetController : MonoBehaviour {
 				transform.localPosition += Vector3.left;
 			}
 		} else {
+			if (moivingProtocol&&onTheMove) {
+				DropDown ();
+			}
 			isMovingHorizontal = false;
+		}
+		if (moivingProtocol&&onTheMove) {
+			DropDown ();
 		}
   }
 

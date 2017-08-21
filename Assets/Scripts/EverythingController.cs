@@ -28,8 +28,11 @@ public static class Default{
 public class EverythingController : MonoBehaviour,IToAll {
 	public PlanetController[] planets;
 	public StackController[] stacks;
+	private List<PlanetController> progressList;
+	private bool isDone = false;
 	public Text score;
 	private int theScore = 0;
+	private bool overideProtocol = false;
 	public List<PlanetController> reversedPlanets;
 	public UFOController ufo;
 	public int CurrentStack {set { 
@@ -42,7 +45,7 @@ public class EverythingController : MonoBehaviour,IToAll {
             if (currentPlanet == null)
             {
                 PickUpPlanet();
-				ufo.MoveTo(value);
+				//ufo.MoveTo(value);
             }
 		} get {
 			return currentStack;
@@ -57,7 +60,7 @@ public class EverythingController : MonoBehaviour,IToAll {
 	void Start() {
     int difficulty = buttonHandler.difficulty_selection;
 	
-	
+		progressList = new List<PlanetController> ();
     switch(difficulty) {
       case 1: setupPlanets(3);
               break;
@@ -99,17 +102,20 @@ public class EverythingController : MonoBehaviour,IToAll {
 			currentA = stacks [0].planets.Count;
 			currentB = stacks [1].planets.Count;
 		}
+
 		if(Input.GetKeyUp(KeyCode.Space)) {
 			PickUpPlanet ();
 		}
 		if (Input.GetKeyUp (KeyCode.D)) {
+			overideProtocol = true;
 			Debug.Log ("KEY ACTIVATED");
 			var init_list = initStack ();
 			dynamicTransfer (init_list, 0, 2, stacks[0].planets.Count);
-			foreach (PlanetController planet in init_list[2]) {
+			foreach (PlanetController planet in init_list[2]) {				
+				progressList.Add (planet);
 
 			}
-			DropDownPlanet ();
+			isDone = true;
 		}
 		if (willBeDroped) {
 			if (currentPlanet != null) {
@@ -136,6 +142,14 @@ public class EverythingController : MonoBehaviour,IToAll {
 		
 		if (total == 1) {
 			nestedPlanets [endStack].Push (nestedPlanets [startStack].Pop());
+			CurrentStack = startStack;
+			stacks [endStack].planets.Add (currentPlanet);
+			currentPlanet.CurrentStack = endStack;
+			if (stacks [endStack].planets.Count == 0) {
+				currentPlanet.lastStackPlanetCoordinate = -3.65f;
+			}
+			CurrentStack = endStack;
+			currentPlanet = null;
 		} else {
 			int aux = 3 - startStack - endStack;
 			dynamicTransfer (nestedPlanets, startStack, aux, total - 1);
@@ -180,6 +194,14 @@ public class EverythingController : MonoBehaviour,IToAll {
 				theScore++;
 				return true;
 			}
+		}
+		if (overideProtocol) {
+			stacks [CurrentStack].planets.Add (currentPlanet);
+			stacks [currentStack].nextDropLongtitude += currentPlanet.diameter;
+			currentPlanet.CurrentStack = currentStack;
+			currentPlanet = null;
+			theScore++;
+			return true;
 		}
 		return false;
 	}
